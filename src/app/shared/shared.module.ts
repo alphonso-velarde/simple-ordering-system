@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LocalStorageService } from './services/local-storage.service';
 import { RouterModule } from '@angular/router';
 import { MaterialComponentsModule } from './material-component/material-components.module';
+import { NavComponent } from './components/nav/nav.component';
 
 
 @NgModule({
@@ -14,15 +15,17 @@ import { MaterialComponentsModule } from './material-component/material-componen
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule,
+    MaterialComponentsModule
   ],
   providers: [LocalStorageService],
   declarations: [
-
+    NavComponent
   ],
   exports: [
     ReactiveFormsModule,
     FormsModule,
     MaterialComponentsModule,
+    NavComponent
   ],
 })
 export class SharedModule {}

@@ -1,3 +1,10 @@
-<ng-template>
-  <router-outlet></router-outlet>
-</ng-template>
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <app-nav *ngIf="getisLoggedIn(); else publicRoute">
+      <router-outlet></router-outlet>
+    </app-nav>
+    <ng-template #publicRoute>
+      <router-outlet></router-outlet>
+    </ng-template>
+  </div>
+</div>

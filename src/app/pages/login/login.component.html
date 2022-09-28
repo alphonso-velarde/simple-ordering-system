@@ -1,28 +1,25 @@
-<div>
-
-    tessst!!!!!!!!
-</div>
-<div>
-    
-    tessst!!!!!!!!
-</div>
-<div>
-    
-    tessst!!!!!!!!
-</div>
-<div>
-    
-    tessst!!!!!!!!
-</div>
-<div>
-    
-    tessst!!!!!!!!
-</div>
-<div>
-    
-    tessst!!!!!!!!
-</div>
-<div>
-    
-    tessst!!!!!!!!
+<div class="outer">
+    <div class="middle">
+      <div class="inner">
+        <mat-card>
+            <mat-card-content>
+                <div class="img-container">
+                    <img mat-card-image src="../../../assets/images/logo.png" alt="logo">
+                </div>
+                <form [formGroup]="loginForm" class="example-form">
+                    <mat-form-field class="full-width">
+                      <mat-label>Username</mat-label>
+                      <input matInput type="text" formControlName="userName">
+                    </mat-form-field>
+                  
+                    <mat-form-field class="full-width">
+                        <mat-label>Password</mat-label>
+                        <input formControlName="password" matInput type="password">
+                    </mat-form-field>
+                    <button (click)="login()" class="full-width" type="submit" mat-raised-button color="primary">Submit</button>
+                </form>
+            </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
 </div>

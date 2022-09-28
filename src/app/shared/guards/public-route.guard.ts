@@ -13,7 +13,7 @@ export class PublicGuard implements CanActivate {
     // let token = localStorage.getItem('token');
     let isLoggedIn: boolean = localStorage.getItem('isLoggedIn') ? true : false
     if(isLoggedIn){
-        this.router.navigate(['/home']);
+        this.router.navigate(['/orders']);
         return false;
     } 
     else {

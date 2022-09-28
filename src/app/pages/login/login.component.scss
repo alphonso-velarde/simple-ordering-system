@@ -1,0 +1,28 @@
+.outer {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    /* Whatever width you want */
+}
+
+.img-container {
+    width: 200px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+}

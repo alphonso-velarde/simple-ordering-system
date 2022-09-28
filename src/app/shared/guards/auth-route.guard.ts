@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class RouteGuard implements CanActivate {
+export class ProtectedRoute implements CanActivate {
   constructor(private router: Router){}
 
   canActivate(next: ActivatedRouteSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
@@ -16,7 +16,7 @@ export class RouteGuard implements CanActivate {
       return true
     } 
     else {
-      this.router.navigate(['/sign-in']);
+      this.router.navigate(['/login']);
       return false;
     }
   }
