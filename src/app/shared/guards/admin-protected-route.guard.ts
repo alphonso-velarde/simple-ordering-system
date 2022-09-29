@@ -6,13 +6,15 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class ProtectedRoute implements CanActivate {
+export class AdminProtectedRoute implements CanActivate {
   constructor(private router: Router){}
 
   canActivate(next: ActivatedRouteSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     // let token = localStorage.getItem('token');
     let isLoggedIn: boolean = localStorage.getItem('isLoggedIn') ? true : false
-    if(isLoggedIn ){
+    let userData: any = localStorage.getItem('userData')
+    userData = JSON.parse(userData)
+    if(isLoggedIn && userData?.role === 'admin'){
       return true
     } 
     else {

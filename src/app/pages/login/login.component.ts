@@ -39,11 +39,25 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.auth$ = this.authStore.pipe(select(state => state.auth));
 
     this.req =  this.auth$.subscribe((auth: AuthState) => {
-      if(auth.auth){
+      if(Object.keys(auth.auth).length > 0){
+
+        this.localStorageService.isLoggedIn = 'true'
+        let userData: any = {
+          role: auth.auth.role,
+          user: auth.auth.name
+        }
+        localStorage.setItem('userData', JSON.stringify(userData))
+
         if(auth.auth.role === 'customer'){
           this.route.navigate(['/orders']);
-          this.localStorageService.isLoggedIn = 'true'
+        } else if(auth.auth.role === 'admin'){
+          this.route.navigate(['/admin']);
         }
+
+        this.authStore.dispatch({
+          type: AuthActionTypes.GET_AUTH_SUCCESS,
+          payload: {}
+        });
       }
 
       if(auth.error){

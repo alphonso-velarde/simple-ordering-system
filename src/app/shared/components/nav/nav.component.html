@@ -1,4 +1,10 @@
-<mat-toolbar>
-    <span>My App</span>
-    <span class="example-spacer"></span>
+<mat-toolbar color="primary">
+    <img class="img-container" src="../../../assets/images/logo.png" alt="logo">
+    <span class="spacer"></span>
+    <button (click)="logout()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>logout</mat-icon>
+    </button>
 </mat-toolbar>
+<div class="app-spacer">
+    <ng-content></ng-content>
+</div>

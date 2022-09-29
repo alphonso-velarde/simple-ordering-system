@@ -1,0 +1,51 @@
+<table datatable class="row-border hover data-table--table mb-3">
+  <thead>
+    <tr>
+      <th *ngFor="let col of columns" scope="col"  [ngClass]="{'data-table--description': col.name == 'Description'}">{{ col.name }}</th>
+      <th *ngIf="withActions || isEditOnly">Actions</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="data.length > 0; else elseBlock" class="data-table--table-body">
+    <tr *ngFor="let row of data; let i = index">
+      <td *ngFor="let col of columns; let j = index">
+        <div *ngIf="col.field != 'image' && col.field != 'photo' && col.field != 'value' && col.field != 'valid_until' && col.field != 'role'">
+          {{ row[col.field] || "-" }}
+        </div>
+
+        <div *ngIf="col.field == 'image' || col.field == 'photo'" class="data-table--item">
+          <img [src]="row[col.field]"/>
+        </div>
+        <div *ngIf="col.field == 'value'" class="data-table--type">
+          <img [src]="ImagePath + programType +'.svg'" alt="reward type">
+          <span>{{row[col.field]}}</span>
+        </div>
+        <div *ngIf="col.field == 'valid_until'" class="data-table--date">
+          <span>{{row[col.field]}}</span>
+        </div>
+        <div *ngIf="col.field == 'role'" class="data-table--role">
+          <span>{{row[col.field]}}</span>
+        </div>
+      </td>
+      <td *ngIf="withActions">
+        <div *ngIf="row?.status ==='Pending'" class="data-table--action">
+            <mat-icon (click)="approve(row)">check</mat-icon>
+            <mat-icon (click)="decline(row)">close</mat-icon>
+        </div>
+      </td>
+      <td *ngIf="isEditOnly">
+        <div *ngIf="row?.status ==='Pending'" class="data-table--action">
+            <mat-icon (click)="edit(row)">edit</mat-icon>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+  <ng-template #elseBlock>
+    <tbody>
+      <tr>
+        <td [attr.colspan]="colSpan" class="text-center">
+          <p>No Data Available</p>
+        </td>
+      </tr>
+    </tbody>
+  </ng-template>
+</table>

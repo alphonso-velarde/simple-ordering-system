@@ -1,1 +1,14 @@
-<p>orders works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <mat-card>
+                <mat-card-content>
+                    <div class="create-div">
+                        <button class="float-right" mat-raised-button (click)="openOrderForm()" color="primary">Create Order</button>
+                    </div>
+                    <app-orders-table></app-orders-table>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

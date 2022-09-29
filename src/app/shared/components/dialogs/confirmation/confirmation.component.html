@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Confirmation</h1>
+<div mat-dialog-content>
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <h3>Are you sure you want to <b>{{data.action}}</b> this order?</h3>
+            <p>Order Details</p>
+            <p>Make: {{data?.make}}</p>
+            <p>Item: {{data?.item}}</p>
+            <p>User: {{data?.user}}</p>
+            <p>Order Date: {{data?.orderDate}}</p>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button *ngIf="data?.action === 'approve'" (click)="confirm()" color="primary" mat-button mat-dialog-close>Approve</button>
+    <button *ngIf="data?.action === 'decline'" (click)="confirm()" color="danger" mat-button mat-dialog-close>Decline</button>
+    <button (click)="cancel()" mat-button mat-dialog-close>Close</button>
+</div>

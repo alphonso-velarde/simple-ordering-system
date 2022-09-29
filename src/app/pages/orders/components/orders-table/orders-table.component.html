@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-sm-12">
+        <app-data-table *ngIf="!loading" (editEmit)="editOrder($event)" [data]="ordersData" [columns]="ordersTableHeader" [isEditOnly]="true">
+        </app-data-table>
+        <mat-progress-spinner
+            *ngIf="loading"
+            class="center-spinner"
+            color="primary"
+            [mode]="'indeterminate'"
+            [value]="'2'">
+        </mat-progress-spinner>
+    </div>
+</div>

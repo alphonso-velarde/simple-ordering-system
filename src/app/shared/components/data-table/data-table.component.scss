@@ -1,0 +1,129 @@
+.data-table {
+    &--type {
+      position: relative;
+      width: 65px;
+      span {
+        position: absolute;
+        right: 10px;
+        top: 4px;
+      }
+      img {
+        height: 30px;
+        width: auto;
+      }
+    }
+    &--item {
+        img {
+            border-radius: 7px;
+            width: 50px;
+        }
+    }
+    &--description {
+        //background-color: $color-primary;
+        //width: 100%;
+    }
+    &--table {
+        &-body {
+            color: #625D5D;
+        }
+    }
+    &--date {
+        span {
+            background: rgba(233, 0, 0, 0.1);
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+    }
+    &--role {
+      span {
+        color: rgba(233, 0, 0, 0.3);
+      }
+    }
+    &--action {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        column-gap: 10px;
+        cursor: pointer;
+        .edit {
+          @extend .action-btn;
+          background: rgba(26, 171, 110, 0.1);
+          color: #3ABA6F;
+          .mat-icon {
+            width: 15px;
+            margin-right: 10px;
+          }
+        }
+        .delete {
+          @extend .action-btn;
+          background: rgba(233, 0, 0, 0.3);
+          color: #E90000;
+          .mat-icon {
+            width: 20px;
+            margin-right: 2px;
+          }
+        }
+    }
+}
+
+.action-btn {
+  border-radius: 20px;
+  padding: 5px 20px;
+  border: 0;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+
+table.dataTable {
+  border-spacing: 0 1em;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+  border-bottom: 0;
+}
+table.dataTable tbody th, table.dataTable tbody tr {
+  //outline: thin solid $color-tertiary;
+  border-top: 1px solid #EBE8E8;
+  border-bottom: 1px solid #EBE8E8;
+  &:hover {
+    box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.05);
+  }
+  &:first-child {
+    td {
+      border-top: 1px solid #EBE8E8;
+    }
+  }
+  td:first-child {
+    border-left: 1px solid #EBE8E8;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  td:last-child {
+    border-right: 1px solid #EBE8E8;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  td {
+    border-top: 1px solid #EBE8E8;
+    border-bottom: 1px solid #EBE8E8;
+    padding: 20px 10px;
+  }
+}
+table.dataTable.no-footer {
+  border-bottom: 0;
+}
+
+::ng-deep .dataTables_wrapper {
+  .dataTables_filter input{
+    border-radius: 10px !important;
+    padding: 10px;
+  }
+
+  .dataTables_paginate .paginate_button.current, .dataTables_paginate .paginate_button.current:hover {
+    background: #3f51b5;
+    color: #fff !important;
+    border: 0;
+  }
+}

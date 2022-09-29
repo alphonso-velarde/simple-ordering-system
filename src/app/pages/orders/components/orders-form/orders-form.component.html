@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>{{modalHeading}}</h1>
+<div mat-dialog-content>
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <form [formGroup]="orderForm">
+                <mat-form-field class="full-width">
+                    <mat-label>Make</mat-label>
+                    <mat-select formControlName="make">
+                        <mat-option *ngFor="let m of makeOptions" [value]="m">{{m}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Item</mat-label>
+                    <mat-select formControlName="item">
+                        <mat-option *ngFor="let i of itemList" [value]="i">{{i}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Quantity</mat-label>
+                    <input min='1' formControlName="quantity" matInput type="number">
+                </mat-form-field>
+            </form>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button (click)="save()" color="primary" mat-button mat-dialog-close>Save</button>
+    <button (click)="cancel()" mat-button mat-dialog-close>Close</button>
+</div>

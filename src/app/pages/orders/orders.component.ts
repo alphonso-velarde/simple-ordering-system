@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { OrdersFormComponent } from './components/orders-form/orders-form.component';
 
 @Component({
   selector: 'app-orders',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdersComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dialogRef: MatDialog, 
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  openOrderForm(){
+    this.dialogRef.open(OrdersFormComponent)
   }
 
 }

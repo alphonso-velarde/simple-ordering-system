@@ -6,6 +6,9 @@ import { LocalStorageService } from './services/local-storage.service';
 import { RouterModule } from '@angular/router';
 import { MaterialComponentsModule } from './material-component/material-components.module';
 import { NavComponent } from './components/nav/nav.component';
+import { DataTableComponent } from './components/data-table/data-table.component';
+import { DataTablesModule } from 'angular-datatables';
+import { ConfirmationComponent } from './components/dialogs/confirmation/confirmation.component';
 
 
 @NgModule({
@@ -15,17 +18,21 @@ import { NavComponent } from './components/nav/nav.component';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule,
-    MaterialComponentsModule
+    MaterialComponentsModule,
+    DataTablesModule
   ],
   providers: [LocalStorageService],
   declarations: [
-    NavComponent
+    NavComponent,
+    DataTableComponent,
+    ConfirmationComponent
   ],
   exports: [
     ReactiveFormsModule,
     FormsModule,
     MaterialComponentsModule,
-    NavComponent
+    NavComponent,
+    DataTableComponent
   ],
 })
 export class SharedModule {}

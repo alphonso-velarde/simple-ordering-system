@@ -1,0 +1,60 @@
+{
+    "inventories": [
+        {
+            "make": "Apple",
+            "item": "Iphone 13 Pro max"
+        },
+        {
+            "make": "Apple",
+            "item": "Iphone 13 Pro"
+        },
+        {
+            "make": "Apple",
+            "item": "Iphone 13"
+        },
+        {
+            "make": "Apple",
+            "item": "Iphone 12 Pro max"
+        },
+        {
+            "make": "Apple",
+            "item": "Iphone 12 Pro"
+        },
+        {
+            "make": "Apple",
+            "item": "Iphone 12"
+        },
+        {
+            "make": "Apple",
+            "item": "Iphone 11 Pro max"
+        },
+        {
+            "make": "Samsung",
+            "item": "S22 Plus"
+        },
+        {
+            "make": "Samsung",
+            "item": "S22"
+        },
+        {
+            "make": "Samsung",
+            "item": "S21"
+        },
+        {
+            "make": "Huawei",
+            "item": "Nova 9"
+        },
+        {
+            "make": "Huawei",
+            "item": "Matepad 9"
+        },
+        {
+            "make": "Xiaomi",
+            "item": "12 Pro"
+        },
+        {
+            "make": "Xiaomi",
+            "item": "12T"
+        }
+    ]
+}
